@@ -23,51 +23,57 @@ struct ContentView: View {
             .bold()
             .font(.title)
             .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
-            
-            HStack() {
-                Text("What is the total bill ?")
-                Spacer()
+            VStack {
+                
+                HStack() {
+                    Text("What is the total bill ?")
+                    Spacer()
+                }
+                
+                TextField("Total Bill Value", text: $TotalBill)
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
+                    .keyboardType(.numberPad)
+                
+                HStack() {
+                    Text("How many people do you want to split with ?")
+                    Spacer()
+                }
+                  
+                
+                TextField("Total number of people", text: $numOfPeople)
+                    .padding()
+                    .background(Color.white)
+                    .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                    .keyboardType(.numberPad)
+                
+                HStack() {
+                    Text("Tips ?")
+                    Spacer()
+                }
+                
+                Slider(value: $sliderValue, in: minimumValue...maximumvalue)
+                    .padding()
+                
+                Text("\(Int(sliderValue)) $")
             }
-            
-            TextField("Total Bill Value", text: $TotalBill)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 0))
-            
-            HStack() {
-                Text("How many people do you want to split with ?")
-                Spacer()
+            Spacer()
+            VStack {
+                Text("Total Bill per person is: \(Int(payable_bill)) $")
             }
-              
-            
-            TextField("Total number of people", text: $numOfPeople)
-                .padding()
-                .background(Color.white)
-                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-            
-            HStack() {
-                Text("Tips ?")
-                Spacer()
-            }
-            
-            Slider(value: $sliderValue, in: minimumValue...maximumvalue)
-                .padding()
-            
-            Text("\(Int(sliderValue)) $")
-          
             
             Spacer()
-            
-            Button(action: {
-                self.payable_bill =  3.0 / 3.0
-                print(self.payable_bill)
-                self.totalClicked = self.totalClicked + 1}) {
-                Spacer()
-                Text("Split Bill")
-                    .foregroundColor(Color.white)
-                    .bold()
-                Spacer()
+            Button(action: {}) {
+                    HStack {
+                        Spacer()
+                        Text("Split Bill")
+                            .foregroundColor(Color.white)
+                            .bold()
+                        Spacer()
+                    }
+                    
             }.padding().background(Color.green).cornerRadius(4.0)
             
         }.padding().background(Color.blue.edgesIgnoringSafeArea(.all))
