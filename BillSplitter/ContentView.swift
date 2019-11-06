@@ -61,11 +61,19 @@ struct ContentView: View {
             }
             Spacer()
             VStack {
-                Text("Total Bill per person is: \(Int(payable_bill)) $")
+                Text("Total Bill per person is: \(payable_bill) $")
             }
             
             Spacer()
-            Button(action: {}) {
+            Button(action: {
+                let bill = Double (self.TotalBill)
+                let people = Double (self.numOfPeople)
+                
+                self.payable_bill = (bill! + self.sliderValue) / people!
+                
+                print(self.payable_bill)
+                
+            }) {
                     HStack {
                         Spacer()
                         Text("Split Bill")
