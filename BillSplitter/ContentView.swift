@@ -9,11 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-       @State var totalClicked: Int = 0
-        @State var TotalBill = ""
-        @State var numOfPeople = ""
-       @State var sliderValue = 0.0
+    @State var totalClicked: Int = 0
+    @State var TotalBill = ""
+    @State var numOfPeople = ""
+    @State var sliderValue = 0.0
     @State var payable_bill: Double = 0.0
+    @State private var showModal = false
        var minimumValue = 0.0
        var maximumvalue = 20.0
     
@@ -60,11 +61,7 @@ struct ContentView: View {
                 Text("\(Int(sliderValue)) $")
             }
             Spacer()
-            VStack {
-                Text("Total Bill per person is: \(payable_bill) $")
-            }
             
-            Spacer()
             Button(action: {
                 let bill = Double (self.TotalBill)
                 let people = Double (self.numOfPeople)
@@ -72,7 +69,7 @@ struct ContentView: View {
                 self.payable_bill = (bill! + self.sliderValue) / people!
                 
                 print(self.payable_bill)
-                
+                self.showModal.toggle()
             }) {
                     HStack {
                         Spacer()
@@ -82,7 +79,9 @@ struct ContentView: View {
                         Spacer()
                     }
                     
-            }.padding().background(Color.green).cornerRadius(4.0)
+            }.padding().background(Color.green).cornerRadius(4.0).sheet(isPresented: $showModal) {
+                ModalView(showModal: self.$showModal, bill: self.payable_bill )
+            }
             
         }.padding().background(Color.blue.edgesIgnoringSafeArea(.all))
     }

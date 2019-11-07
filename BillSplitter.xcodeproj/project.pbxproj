@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3057F0C23732F6B001C52D2 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3057F0B23732F6B001C52D2 /* ModalView.swift */; };
 		A30DBDBB2372F5E1004194D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DBDBA2372F5E1004194D5 /* AppDelegate.swift */; };
 		A30DBDBD2372F5E1004194D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DBDBC2372F5E1004194D5 /* SceneDelegate.swift */; };
 		A30DBDBF2372F5E1004194D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30DBDBE2372F5E1004194D5 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A3057F0B23732F6B001C52D2 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		A30DBDB72372F5E1004194D5 /* BillSplitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillSplitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30DBDBA2372F5E1004194D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A30DBDBC2372F5E1004194D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				A30DBDBA2372F5E1004194D5 /* AppDelegate.swift */,
 				A30DBDBC2372F5E1004194D5 /* SceneDelegate.swift */,
 				A30DBDBE2372F5E1004194D5 /* ContentView.swift */,
+				A3057F0B23732F6B001C52D2 /* ModalView.swift */,
 				A30DBDC02372F5E6004194D5 /* Assets.xcassets */,
 				A30DBDC52372F5E6004194D5 /* LaunchScreen.storyboard */,
 				A30DBDC82372F5E6004194D5 /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				A30DBDBB2372F5E1004194D5 /* AppDelegate.swift in Sources */,
 				A30DBDBD2372F5E1004194D5 /* SceneDelegate.swift in Sources */,
+				A3057F0C23732F6B001C52D2 /* ModalView.swift in Sources */,
 				A30DBDBF2372F5E1004194D5 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
